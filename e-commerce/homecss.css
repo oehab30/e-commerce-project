@@ -1,78 +1,123 @@
+/* ===== RESET & BASE STYLES ===== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-.center{
-display: flex;
-justify-content: center
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-  body {
-    font-family: Arial, sans-serif;
-    background-color: rgba(13, 29, 51, 1);
-  }
+body {
+  font-family: Arial, sans-serif;
+  background-color: rgba(13, 29, 51, 1);
+  color: #333;
+}
 
-  /*-------NAV BAR end------*/
+/* ===== UTILITY CLASSES ===== */
+.center {
+  display: flex;
+  justify-content: center;
+}
 
+/* ===== HEADER STYLES ===== */
+.header {
+  background-color: #ffffff;
+  padding: 18px 0;
+  margin: 20px 0 50px 0;
+}
+
+.container {
+  max-width: 1176px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px; /* Added padding for mobile */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-box {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Added gap between logo elements */
+}
+
+.logo-img {
+  height: 30px;
+  width: auto; /* Ensure proper aspect ratio */
+}
+
+/* ===== NAVIGATION STYLES ===== */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 12px;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 60%;
+  width: 1px;
+  background-color: #000;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #000;
+  padding: 5px 10px;
+  transition: color 0.3s ease;
+  font-size: 14px;
+}
+
+.nav-links a:hover {
+  color: rgb(187, 169, 145);
+}
+
+/* ===== MAIN CONTENT STYLES ===== */
+.main-content {
+  padding: 20px 0;
+}
+
+.page {
+  background-color: aliceblue;
+  padding: 30px;
+  border-radius: 5px; /* Added for better appearance */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Added subtle shadow */
+}
+
+.main-image {
+  width: 1050px;
+  max-width: 100%; /* Make responsive */
+  height: auto;
+  display: block; /* Remove extra space below image */
+}
+
+/* ===== RESPONSIVE ADJUSTMENTS ===== */
+@media (max-width: 768px) {
   .container {
-    max-width: 1176px;
-    margin: 0 auto;
-    padding: 0 0px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
+    flex-direction: column;
+    gap: 15px;
   }
-  .logo_box {
-    display: flex;
-}
-
-  header {
-    background-color: #ffffff;
-    padding: 18px 0;
-    margin-bottom: 50px;
-    margin-top: 20px;
-}
-
-.pic_logo{
-    height: 30px;
-}
-
-
-#logo{}
-
 
   .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
-  .nav-links li a {
-    text-decoration: none;
-    color: #000;
-    padding: 5px 10px;
-    transition: 0.4s;
-    font-size: 14px;
+  .main-image {
+    width: 100%;
   }
-
-  .nav-links li a:hover {
-    color: rgb(187, 169, 145);
-  }
-
-  /*-------NAV BAR end------*/
-
-  /*-------home content------*/
-.imgfelnos{
-    width: 1050px;
 }
 
-.page{
-    background-color: aliceblue;
-padding-left:   30px;
-padding-right:  30px;
-padding-top:    30px;
-padding-bottom: 30px;
+.mor{
+  margin-top: 25px;
+background-color: blue;
+ height: 90px;
+  width: 100px;
 }
