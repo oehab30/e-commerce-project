@@ -3,39 +3,82 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>E-commerce</title>
+    <!-- Changed from "Document" to more descriptive title -->
     <link rel="stylesheet" href="homecss.css" />
   </head>
   <body>
+    <header class="header">
+      <div class="container">
+        <div class="logo-box">
+          <div class="circler"></div>
+          <div class="logo">
+            <a href="#">
+              <img class="logo-img" src="media.png" alt="Restaurant Logo" />
+            </a>
+          </div>
+        </div>
 
+        <nav class="navigation">
+          <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="#">Our story</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-      <header> <!-- navbar -->
-          <div class="container"> <!-- content in inside navbar -->
-              <div class="logo_box"> <!-- logo side -->
-            <div class="circler"></div>
-            <div id="logo"><a href="#"><img class="pic_logo" src="media.png"></a></div>
-        </div>  <!-- End logo side -->
+    <main class="main-content">
+      <!-- Added semantic main tag -->
+      <div class="center">
+        <div class="page">
+          <img class="main-image" src="Reppon.png" alt="Restaurant interior" />
+          <div class="mor"></div>
+          <div class="w3-content w3-display-container" style="max-width:800px">
+            <img class="mySlides" src="=.jpg" style="width:100%">
+            <img class="mySlides" src="img_snow_wide.jpg" style="width:100%">
+            <img class="mySlides" src="img_mountains_wide.jpg" style="width:100%">
+            <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+              <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+              <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+              <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+              <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+              <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+            </div>
+          </div>
 
-        <nav>   <!-- link side -->
-            <ul class="nav-links">
-                <li><a style="border-right: 1px solid rgb(0, 0, 0)" href="#">Home</a></li>
-                <li><a style="border-right: 1px solid rgb(0, 0, 0)" href="#">Menu</a></li>
-                <li><a style="border-right: 1px solid rgb(0, 0, 0)" href="#">Contact us</a></li>
-                <li><a style="border-right: 1px solid rgb(0, 0, 0)" href="#">Our story</a></li>
-            </ul>
-        </nav>  <!-- End link side -->
-    </div>    <!-- end content in inside navbar -->
-</header>   <!-- endnavbar -->
+          <script>
+          var slideIndex = 1;
+          showDivs(slideIndex);
 
-<div class="center">
-<div class="page">
-    <img class="imgfelnos" src="Reppon.png" alt="">
-</div>
+          function plusDivs(n) {
+            showDivs(slideIndex += n);
+          }
 
-</div>
+          function currentDiv(n) {
+            showDivs(slideIndex = n);
+          }
 
-
-
-
+          function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            if (n > x.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = x.length}
+            for (i = 0; i < x.length; i++) {
+              x[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" w3-white", "");
+            }
+            x[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " w3-white";
+          }
+          </script>
+        </div> <!--  white page pad   -->
+      </div><!--   center  -->
+    </main> <!--  main page  content  -->
   </body>
 </html>
