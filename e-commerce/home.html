@@ -6,6 +6,12 @@
     <title>E-commerce</title>
     <!-- Changed from "Document" to more descriptive title -->
     <link rel="stylesheet" href="homecss.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playwrite+RO:wght@100..400&family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header class="header">
@@ -31,54 +37,123 @@
     </header>
 
     <main class="main-content">
-      <!-- Added semantic main tag -->
+      <!-- all home page content  -->
       <div class="center">
+        <!--  box contain content in middle  -->
         <div class="page">
-          <img class="main-image" src="Reppon.png" alt="Restaurant interior" />
-          <div class="mor"></div>
-          <div class="w3-content w3-display-container" style="max-width:800px">
-            <img class="mySlides" src="=.jpg" style="width:100%">
-            <img class="mySlides" src="img_snow_wide.jpg" style="width:100%">
-            <img class="mySlides" src="img_mountains_wide.jpg" style="width:100%">
-            <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
-              <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
-              <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
-              <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
-              <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
-              <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+          <!-- white sheet that contain the content   -->
+          <main class="main-content">
+            <!--  home section  -->
+            <img class="main-image" src="Reppon.png" alt=" store" />
+            <!--  first pic  -->
+            <div class="content-wrapper">
+              <!--  box  slides and text  -->
+              <!-- Text Header Section -->
+              <div class="text-header">
+                <!--  text beside slides  -->
+                <h1>Welcome to Our Store</h1>
+                <p class="subtitle">Experience culinary excellence</p>
+                <p class="description">
+                  Discover our carefully crafted menu featuring the finest
+                  ingredients and authentic flavors that will transport your
+                  senses.
+                </p>
+                <button class="cta-button">View Our Menu</button>
+              </div>
+              <!-- Slider Section -->
+              <div class="slider-container">
+                <!-- slides content  -->
+                <div class="slideshow">
+                  <div class="slide">
+                    <img
+                      src="pictures/pexels-anthony-macajone-1782407.jpg"
+                      alt="Restaurant image 1"
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="pictures/pexels-cottonbro-studio-8721318.jpg"
+                      alt="Restaurant image 2"
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="pictures/pexels-bao-dang-3700369.jpg"
+                      alt="Restaurant image 3"
+                    />
+                  </div>
+
+                  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+
+                <div class="dots-container">
+                  <!-- Slides dots -->
+                  <span class="dot" onclick="currentSlide(1)"></span>
+                  <span class="dot" onclick="currentSlide(2)"></span>
+                  <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+                <!-- Slides dots -->
+              </div>
             </div>
-          </div>
-
+          </main>
+          <!--   end home section  -->
           <script>
-          var slideIndex = 1;
-          showDivs(slideIndex);
+            /* animation in the slides JS*/
+            let slideIndex = 1;
+            showSlides(slideIndex);
 
-          function plusDivs(n) {
-            showDivs(slideIndex += n);
-          }
-
-          function currentDiv(n) {
-            showDivs(slideIndex = n);
-          }
-
-          function showDivs(n) {
-            var i;
-            var x = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("demo");
-            if (n > x.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = x.length}
-            for (i = 0; i < x.length; i++) {
-              x[i].style.display = "none";
+            function plusSlides(n) {
+              showSlides((slideIndex += n));
             }
-            for (i = 0; i < dots.length; i++) {
-              dots[i].className = dots[i].className.replace(" w3-white", "");
+
+            function currentSlide(n) {
+              showSlides((slideIndex = n));
             }
-            x[slideIndex-1].style.display = "block";
-            dots[slideIndex-1].className += " w3-white";
-          }
+
+            function showSlides(n) {
+              let i;
+              let slides = document.getElementsByClassName("slide");
+              let dots = document.getElementsByClassName("dot");
+
+              if (n > slides.length) {
+                slideIndex = 1;
+              }
+              if (n < 1) {
+                slideIndex = slides.length;
+              }
+
+              for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+              }
+
+              for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+              }
+
+              slides[slideIndex - 1].style.display = "block";
+              dots[slideIndex - 1].className += " active";
+
+              // Auto-advance slides every 5 seconds
+              setTimeout(() => {
+                plusSlides(1);
+              }, 70000);
+            }
           </script>
-        </div> <!--  white page pad   -->
-      </div><!--   center  -->
-    </main> <!--  main page  content  -->
+
+          <div class="section-2">
+            <img class="img1-sec2" src="pictures/store sign.png" alt=" store" />
+            <!--  first pic  -->
+            <span class="quote-text"
+              >" More than just a place to enjoy fine coffee and Nuts. It's a
+              place where Mazaj lifted"</span
+            >
+          </div>
+        </div>
+        <!--End of page  -->
+      </div>
+      <!-- End of the content in middle  -->
+    </main>
+    <!-- END  home page content  -->
   </body>
 </html>
