@@ -6,6 +6,7 @@
 }
 
 body {
+  font-family: "Varela Round", sans-serif;
   background-color: rgba(13, 29, 51, 1);
   color: #333;
 }
@@ -361,8 +362,11 @@ body {
   display: block;
   text-align: center;
   position: relative;
-  font-size: 34px;
+  font-size: 46px;
   width: 1000px;
+  font-family: "Newsreader", serif;
+  font-weight: 800;
+  font-style: normal;
 }
 
 .img2-sec2 {
