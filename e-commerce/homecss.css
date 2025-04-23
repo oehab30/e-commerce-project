@@ -6,7 +6,6 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
   background-color: rgba(13, 29, 51, 1);
   color: #333;
 }
@@ -79,6 +78,8 @@ body {
   color: rgb(187, 169, 145);
 }
 
+/* ===== End OF NAVIGATION STYLES ===== */
+
 /* ===== MAIN CONTENT STYLES ===== */
 .main-content {
   padding: 20px 0;
@@ -92,6 +93,7 @@ body {
 }
 
 .main-image {
+  /* awl sora */
   width: 1050px;
   max-width: 100%; /* Make responsive */
   height: auto;
@@ -114,10 +116,256 @@ body {
     width: 100%;
   }
 }
+/*----------------------------------------*/
 
-.mor{
+/* ===== SLIDER STYLES ===== */
+.slider-container {
+  width: 100%;
+  max-width: 1050px;
+  margin: 25px auto 0;
+  position: relative;
+}
+
+.slideshow {
+  position: relative;
+  width: 100%;
+  height: 500px; /* Adjust height as needed */
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none;
+  animation: fade 0.9s ease-in-out; /*animation fe slide*/
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Navigation arrows */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  transition: 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+/* end of nav arrows */
+/* Dots/bullets/indicators */
+.dots-container {
+  text-align: center;
+  padding: 15px 0;
+}
+
+.dot {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .slideshow {
+    height: 350px;
+  }
+
+  .prev,
+  .next {
+    padding: 12px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slideshow {
+    height: 250px;
+  }
+
+  .dot {
+    height: 10px;
+    width: 10px;
+  }
+}
+
+/* ===== CONTENT WRAPPER "text beside slides " ===== */
+.content-wrapper {
+  display: flex;
+  gap: 30px;
   margin-top: 25px;
-background-color: blue;
- height: 90px;
-  width: 100px;
+  align-items: flex-start;
+}
+
+.text-header {
+  flex: 1;
+  padding: 20px;
+  color: #333;
+  margin-top: 80px;
+}
+
+.slider-container {
+  flex: 1;
+  max-width: 600px;
+}
+
+/* Text Header Styles */
+.text-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #0d1d33;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #777;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  color: #555;
+}
+
+.cta-button {
+  background-color: #0d1d33;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #1a365d;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Adjust slider height to match content */
+.slideshow {
+  height: 400px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .content-wrapper {
+    flex-direction: column;
+  }
+
+  .slider-container {
+    max-width: 100%;
+    order: -1; /* Move slider above text on mobile */
+  }
+
+  .text-header {
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .slideshow {
+    height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .text-header h1 {
+    font-size: 2rem;
+  }
+
+  .slideshow {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slideshow {
+    height: 250px;
+  }
+
+  .text-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+}
+
+/*    section 2 second  image */
+
+.img1-sec2 {
+  width: 1050px;
+  max-width: 100%; /* Make responsive */
+  height: auto;
+  display: block; /* Remove extra space below image */
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+.quote-text {
+  margin-top: 55px;
+  padding-left: 30px;
+  font-weight: 800; /* Bold */
+  color: #0d1d33;
+  line-height: 1.4;
+  display: block;
+  text-align: center;
+  position: relative;
+  font-size: 34px;
+  width: 1000px;
+}
+
+.img2-sec2 {
+  /*  m7tag ageeb pic */
+  width: 1050px;
 }
