@@ -1,0 +1,108 @@
+/* ===== GLOBAL STYLES ===== */
+body {
+    font-family: "Varela Round", sans-serif;
+    background-color: rgba(13, 29, 51, 1); /* Match contactus.css background */
+    color: #333; /* Match contactus.css text color */
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== HEADER STYLES ===== */
+.header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo-box {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 100px;
+}
+
+/* ===== NAVIGATION BAR STYLES ===== */
+.navigation .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navigation .nav-links li {
+    position: relative;
+}
+
+.navigation .nav-links li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+.navigation .nav-links li a:hover {
+    color: #fff;
+    background-color: #0d1d33;
+}
+
+.navigation .nav-links li a.active {
+    color: #fff;
+    background-color: #1a365d;
+}
+
+/* ===== OUR STORY SECTION ===== */
+.our-story-section {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: aliceblue; /* Match contactus.css section background */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 30px auto;
+    max-width: 1200px;
+}
+
+.our-story-title {
+    font-size: 2.5rem;
+    color: #0d1d33; /* Match contactus.css title color */
+    margin-bottom: 30px;
+    font-family: 'Varela Round', Arial, sans-serif;
+}
+
+.our-story-description {
+    font-size: 1.2rem;
+    color: #444; /* Match contactus.css text color */
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: justify; /* Justify text for a clean look */
+    padding: 0 20px;
+}
+
+.our-story-image {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Match contactus.css image shadow */
+}
+
+/* ===== FOOTER STYLES ===== */
+.footer {
+    background-color: #0d1d33; /* Match contactus.css footer background */
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 50px;
+}
